@@ -20,6 +20,7 @@ public class Dormitory1 extends Application {
     }
     
     public static void main(String[] args) {
+	System.out.println("deneme");
         launch(args);
     }
     
