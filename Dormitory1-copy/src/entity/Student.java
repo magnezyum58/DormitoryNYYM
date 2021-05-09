@@ -13,6 +13,14 @@ public class Student extends Human {
         this.setSurname(surname);
         this.setTcNo(tcNo);
     }
+    public Student(String name, String surname, String tcNo, String studentNumber, String roomNumber, String bedNumber) {
+        this.bedNumber = bedNumber;
+        this.roomNumber = roomNumber;
+        this.studentNumber = studentNumber;
+        this.setName(name);
+        this.setSurname(surname);
+        this.setTcNo(tcNo);
+    }
 
     public String getId() {
         return id;

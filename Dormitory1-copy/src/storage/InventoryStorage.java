@@ -17,7 +17,7 @@ public class InventoryStorage {
     ObservableList<Inventory> list = FXCollections.observableArrayList();
 
     public ObservableList fillInventoryList() {
-        con=getDbConnect().connect();
+        con = getDbConnect().connect();
         list.clear();
         try {
             Statement st = con.createStatement();
@@ -34,23 +34,39 @@ public class InventoryStorage {
         }
         return list;
     }
-    public void insertItem(Inventory item){
-        con=getDbConnect().connect();
+
+    public void insertItem(Inventory item) {
+        con = getDbConnect().connect();
         try {
-            PreparedStatement ins = con.prepareStatement("INSERT INTO inventory (name, piece) VALUES ('"+item.getName()+"', '"+parseInt(item.getPiece())+"')");
+            PreparedStatement ins = con.prepareStatement("INSERT INTO inventory (name, piece) VALUES ('" + item.getName() + "', '" + parseInt(item.getPiece()) + "')");
             ins.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-    public void deleteItem(int id){
-        con=getDbConnect().connect();
+
+    public void deleteItem(int id) {
+        con = getDbConnect().connect();
         try {
             PreparedStatement delete = con.prepareStatement("DELETE FROM inventory WHERE id=?");
             delete.setInt(1, id);
             int rows = delete.executeUpdate();
             if (rows > 0) {
                 System.out.println("Kullanıcı bilgisi silindi");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void updateItem(int id, Inventory item) {
+        con = getDbConnect().connect();
+        try {
+            String sql = "UPDATE inventory set name='" + item.getName() + "', piece='" + parseInt(item.getPiece()) + "'  WHERE id=('" + id + "')";
+            Statement statement = con.createStatement();
+            int rows = statement.executeUpdate(sql);
+            if (rows > 0) {
+                System.out.println("item bilgisi güncellendi");
             }
         } catch (Exception e) {
             System.out.println(e);
