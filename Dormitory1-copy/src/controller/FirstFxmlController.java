@@ -52,7 +52,13 @@ public class FirstFxmlController implements Initializable {
 
     @FXML
     void employeeManagementButtonAction(ActionEvent event) {
-
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/EmployeeManagement.fxml"));
+            Stage window = (Stage) employeeManagementButton.getScene().getWindow();
+            window.setScene(new Scene(root, 694, 446));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @FXML
@@ -71,7 +77,7 @@ public class FirstFxmlController implements Initializable {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/StudentManagement.fxml"));
             Stage window = (Stage) studentManagementButton.getScene().getWindow();
-            window.setScene(new Scene(root, 728, 502));
+            window.setScene(new Scene(root, 813, 511));
         } catch (Exception e) {
             System.out.println(e);
         }
