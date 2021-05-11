@@ -98,11 +98,18 @@ public class InventoryController implements Initializable {
     void deleteButtonAction(ActionEvent event) {
         getInventoryStorage().deleteItem(parseInt(idTextField.getText()));
         getInventoryStorage().fillInventoryList();
+        idTextField.clear();
+        nameTextField.clear();
+        pieceTextField.clear();
     }
 
     @FXML
     void updateButtonAction(ActionEvent event) {
-
+        String name=nameTextField.getText();
+        String piece=pieceTextField.getText();
+        
+        getInventoryStorage().updateItem(parseInt(idTextField.getText()),new Inventory(name,piece));
+        getInventoryStorage().fillInventoryList();
     }
 
     @FXML

@@ -2,6 +2,7 @@ package storage;
 
 import entity.Student;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
@@ -40,8 +41,8 @@ public class StudentStorage {
     public void insertItem(Student stu) {
         con = getDbConnect().connect();
         try {
-            //PreparedStatement ins = con.prepareStatement("INSERT INTO inventory (name, piece) VALUES ('"+item.getName()+"', '"+parseInt(item.getPiece())+"')");
-            //ins.executeUpdate();
+            PreparedStatement ins = con.prepareStatement("INSERT INTO Student (name, surname, tcNo, roomNumber, bedNumber, studentNumber) VALUES ('" + stu.getName() + "', '" + stu.getSurname() + "', '" + stu.getTcNo() + "', '" + stu.getRoomNumber() + "', '" + stu.getBedNumber() + "', '" + stu.getStudentNumber() + "')");
+            ins.executeUpdate();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -50,12 +51,26 @@ public class StudentStorage {
     public void deleteItem(int id) {
         con = getDbConnect().connect();
         try {
-            /*PreparedStatement delete = con.prepareStatement("DELETE FROM inventory WHERE id=?");
+            PreparedStatement delete = con.prepareStatement("DELETE FROM Student WHERE id=?");
             delete.setInt(1, id);
             int rows = delete.executeUpdate();
             if (rows > 0) {
                 System.out.println("Kullanıcı bilgisi silindi");
-            }*/
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void updateItem(int id, Student stu) {
+        con = getDbConnect().connect();
+        try {
+            String sql = "UPDATE Student set name='" + stu.getName() + "', surname='" + stu.getSurname() + "', tcNo='" + stu.getTcNo() + "', roomNumber='" + stu.getRoomNumber() + "', bedNumber='" + stu.getBedNumber() + "', studentNumber='" + stu.getStudentNumber() + "' WHERE id=('" + id + "')";
+            Statement statement = con.createStatement();
+            int rows = statement.executeUpdate(sql);
+            if (rows > 0) {
+                System.out.println("Kullanıcı bilgisi güncellendi");
+            }
         } catch (Exception e) {
             System.out.println(e);
         }

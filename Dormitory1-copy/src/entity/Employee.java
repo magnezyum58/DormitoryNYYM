@@ -4,19 +4,31 @@ public class Employee extends Human {
 
     private String username;
     private String password;
-    private final int employeeId;
+    private String id;
 
-    public Employee(String username, String password, int employeeId,String name,String surname,String tcNo) {
+    public Employee(String id, String username, String password, String name, String surname, String tcNo) {
         this.setName(name);
         this.setSurname(surname);
         this.setTcNo(tcNo);
         this.username = username;
         this.password = password;
-        this.employeeId = employeeId;
+        this.id = id;
     }
-    
+
+    public Employee(String username, String password, String name, String surname, String tcNo) {
+        this.setName(name);
+        this.setSurname(surname);
+        this.setTcNo(tcNo);
+        this.username = username;
+        this.password = password;
+    }
+
     public String getUsername() {
         return username;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void setUsername(String username) {
@@ -31,8 +43,8 @@ public class Employee extends Human {
         this.password = password;
     }
 
-    public int getEmployeeId() {
-        return employeeId;
+    public String getEmployeeId() {
+        return id;
     }
 
 }

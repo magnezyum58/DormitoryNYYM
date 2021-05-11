@@ -11,7 +11,7 @@
     -fx-background-radius: 5;     
 }
 #authorityValueLabel,#nameValueLabel{
-    -fx-background-color: transparent;
+    -fx-background-color: transparan;
     -fx-border-color: #ffffff;
     -fx-border-width: 0px 0px 1px 0px;
 }
