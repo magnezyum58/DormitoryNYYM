@@ -5,8 +5,12 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< Updated upstream
 
 <AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="813.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="controller.StudentManagementController">
+=======
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="813.0" stylesheets="@../css/StudentManagementCss.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentManagementController">
+>>>>>>> Stashed changes
    <children>
       <TableView fx:id="tableView" layoutX="109.0" layoutY="55.0" prefHeight="200.0" prefWidth="594.0">
         <columns>
@@ -19,6 +23,27 @@
             <TableColumn fx:id="tcNo" prefWidth="104.79998779296875" text="Tc No" />
         </columns>
       </TableView>
+<<<<<<< Updated upstream
       <Button fx:id="backButton" layoutX="57.0" layoutY="426.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+=======
+      <Button fx:id="backButton" layoutX="14.0" layoutY="471.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" textFill="WHITE" />
+      <TextField fx:id="nameText" layoutX="297.0" layoutY="249.0" />
+      <TextField fx:id="surnameText" layoutX="297.0" layoutY="295.0" />
+      <TextField fx:id="tcNoText" layoutX="297.0" layoutY="341.0" />
+      <TextField fx:id="studentNoText" layoutX="586.0" layoutY="249.0" />
+      <TextField fx:id="bedNoText" layoutX="586.0" layoutY="295.0" />
+      <TextField fx:id="roomText" layoutX="586.0" layoutY="341.0" />
+      <TextField fx:id="idText" layoutX="56.0" layoutY="295.0" />
+      <Text fill="WHITE" layoutX="24.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id :" />
+      <Text fill="WHITE" layoutX="244.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name :" />
+      <Text fill="WHITE" layoutX="229.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname :" />
+      <Text fill="WHITE" layoutX="244.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tc No :" />
+      <Text fill="WHITE" layoutX="503.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student No :" />
+      <Text fill="WHITE" layoutX="525.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bed No :" />
+      <Text fill="WHITE" layoutX="513.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room No :" />
+      <Button fx:id="addButton" layoutX="494.0" layoutY="415.0" mnemonicParsing="false" onAction="#addButtonAction" text="Add" textFill="WHITE" />
+      <Button fx:id="deleteButton" layoutX="570.0" layoutY="415.0" mnemonicParsing="false" onAction="#deleteButtonAction" text="Delete" textFill="WHITE" />
+      <Button fx:id="updateButton" layoutX="649.0" layoutY="415.0" mnemonicParsing="false" onAction="#updateButtonAction" text="Update" textFill="WHITE" />
+>>>>>>> Stashed changes
    </children>
 </AnchorPane>
