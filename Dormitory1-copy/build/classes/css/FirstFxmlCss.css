@@ -1,0 +1,35 @@
+
+#surnameLabel,#nameLabel,#authorityLabel{
+    -fx-background-color: #63d8ff;
+    -fx-background-radius: 5;   
+}
+.root{
+    -fx-background-color:linear-gradient(#03c4ff,#015e7a);
+}
+#bottomPanel{
+    -fx-background-color: linear-gradient(#015e7a,#03c4ff);
+    -fx-background-radius: 5;     
+}
+#authorityValueLabel,#nameValueLabel{
+    -fx-background-color: transparan;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+#iconLabel{
+    -fx-background-image: url('/images/images.png');
+    -fx-background-size:100%;  
+    -fx-background-radius: 100;
+}
+
+Button{
+    -fx-text-fill: whitesmoke;
+    -fx-border-width: 0.3;
+    -fx-border-color:#0008ff;
+    -fx-background-color: #03c4ff;
+    -fx-border-radius:50;
+    -fx-background-radius: 50;
+}
+Button:hover{
+    -fx-background-color: #c9fbff;
+}
+
