@@ -85,10 +85,16 @@ public class FirstFxmlController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//a
         fStorage = new FirstFxmlStorage();
-        this.nameValueLabel.setText(this.fStorage.getNameSurname(u, p));
-        this.authorityValueLabel.setText("admin");
+        this.nameValueLabel.setText(fStorage.getNameSurname(u, p));
+        if(fStorage.getAuthority(fStorage.getId(u, p))){
+            this.employeeManagementButton.setVisible(true);
+            this.authorityValueLabel.setText("Admin");
+        }
+        else{
+            this.employeeManagementButton.setVisible(false);
+            this.authorityValueLabel.setText("User");
+        }
     }
 
 }

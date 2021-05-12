@@ -25,23 +25,42 @@ public class FirstFxmlStorage {
         }
         return nameSurname;
     }
-
-    /*public int getAuthority(String username, String password) {
+    public int getId(String username,String password){
         con = getDbConnect().connect();
-        int authority = 0;
+        int id=0;
         try {
+
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("select * from user");
             while (rs.next()) {
                 if (username.equals(rs.getString("username")) && password.equals(rs.getString("password"))) {
-                    System.out.println(rs.getInt(authority));
-                    authority = rs.getInt(authority);
+                    id=rs.getInt("id");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return id;
+    }
+
+    public boolean getAuthority(int id) {
+        con = getDbConnect().connect();
+        boolean authority=false;
+        System.out.println(id);
+        try {
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from user");
+            while (rs.next()) {
+                if (id==rs.getInt("id")){
+                    if(rs.getString("authority").equals("admin")){
+                        authority=true;
+                    }
                 }
             }
         } catch (Exception e) {
             System.out.println(e);
         }
         return authority;
-    }*/
+    }
 
 }
