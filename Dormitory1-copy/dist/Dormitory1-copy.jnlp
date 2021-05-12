@@ -8,16 +8,9 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< Updated upstream
-    <jar href="Dormitory1-copy.jar" size="152194" download="eager" />
-=======
-    <jar href="Dormitory1-copy.jar" size="158694" download="eager" />
->>>>>>> Stashed changes
+    <jar href="Dormitory1-copy.jar" size="158665" download="eager" />
     <jar href="lib\mysql-connector-java-8.0.19.jar" size="2356711" download="eager" />
   </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Dormitory1-copy" >
-    <param name="requiredFXVersion" value="8.0+"/>
-  </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="dormitory1.Dormitory1"  name="Dormitory1-copy" />
   <update check="always"/>
 </jnlp>
