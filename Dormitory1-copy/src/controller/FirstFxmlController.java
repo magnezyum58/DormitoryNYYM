@@ -47,7 +47,13 @@ public class FirstFxmlController implements Initializable {
 
     @FXML
     void dormitoryManagementButtonAction(ActionEvent event) {
-
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/DormitoryManagement.fxml"));
+            Stage window = (Stage) dormitoryManagementButton.getScene().getWindow();
+            window.setScene(new Scene(root, 600, 400));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     @FXML

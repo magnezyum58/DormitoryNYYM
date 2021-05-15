@@ -19,7 +19,7 @@ public class RoomManagementStorage {
             while (rs.next()) {
                 if (rs.getInt("idBed") == bedNumber) {
                     full = rs.getInt("full");
-                }      
+                }
             }
             if (full != 0) {
                 return false;
@@ -90,7 +90,7 @@ public class RoomManagementStorage {
     protected void updateBed(Student stu) {
         con = getDbConnect().connect();
         try {
-            String sql = "UPDATE Bed set studentId='" + stu.getStudentNumber() + "',full='1' WHERE id=('" + stu.getBedNumber() + "')";
+            String sql = "UPDATE Bed set studentId='" + stu.getStudentNumber() + "',full='1' WHERE idBed=('" + stu.getBedNumber() + "')";
             Statement statement = con.createStatement();
             int rows = statement.executeUpdate(sql);
             if (rows > 0) {
@@ -101,10 +101,13 @@ public class RoomManagementStorage {
         }
     }
 
-    protected void deleteBed(Student stu) {
+    protected void deleteBed(int idBed) {
+        if (idBed == 0) {
+            System.out.println("Yatak zaten boş");
+        }
         con = getDbConnect().connect();
         try {
-            String sql = "UPDATE Bed set studentId='null',full='0' WHERE id=('" + stu.getBedNumber() + "')";
+            String sql = "UPDATE Bed set studentId=NULL,full='0' WHERE idBed=('" + idBed + "')";
             Statement statement = con.createStatement();
             int rows = statement.executeUpdate(sql);
             if (rows > 0) {
