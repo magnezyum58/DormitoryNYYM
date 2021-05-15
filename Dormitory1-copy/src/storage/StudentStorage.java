@@ -14,6 +14,7 @@ public class StudentStorage {
     Connection con;
 
     ObservableList<Student> list = FXCollections.observableArrayList();
+    RoomManagementStorage rm;
 
     public ObservableList fillStudentList() {
         con = getDbConnect().connect();
@@ -40,16 +41,20 @@ public class StudentStorage {
 
     public void insertItem(Student stu) {
         con = getDbConnect().connect();
+        rm = new RoomManagementStorage();
         try {
             PreparedStatement ins = con.prepareStatement("INSERT INTO Student (name, surname, tcNo, roomNumber, bedNumber, studentNumber) VALUES ('" + stu.getName() + "', '" + stu.getSurname() + "', '" + stu.getTcNo() + "', '" + stu.getRoomNumber() + "', '" + stu.getBedNumber() + "', '" + stu.getStudentNumber() + "')");
             ins.executeUpdate();
+            rm.updateBed(stu);
         } catch (Exception e) {
             System.out.println(e);
         }
+
     }
 
     public void deleteItem(int id) {
         con = getDbConnect().connect();
+        rm = new RoomManagementStorage();
         try {
             PreparedStatement delete = con.prepareStatement("DELETE FROM Student WHERE id=?");
             delete.setInt(1, id);
@@ -60,6 +65,7 @@ public class StudentStorage {
         } catch (Exception e) {
             System.out.println(e);
         }
+       
     }
 
     public void updateItem(int id, Student stu) {

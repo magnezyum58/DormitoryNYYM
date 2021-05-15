@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="635.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DormitoryManagementController">
+    <stylesheets>
+        <URL value="@/css/DormitoryManagement.css" />
+    </stylesheets>
+   <children>
+      <ButtonBar layoutX="60.0" layoutY="100.0" prefHeight="40.0" prefWidth="463.0">
+        <buttons>
+            <Button fx:id="Button1" mnemonicParsing="false" onAction="#Button1Action" text="1" />
+            <Button fx:id="Button2" mnemonicParsing="false" onAction="#Button2Action" text="2" />
+            <Button fx:id="Button3" mnemonicParsing="false" onAction="#Button3Action" text="3" />
+            <Button fx:id="Button4" mnemonicParsing="false" onAction="#Button4Action" text="4" />
+            <Button fx:id="Button5" mnemonicParsing="false" onAction="#Button5Action" text="5" />
+            <Button fx:id="Button6" mnemonicParsing="false" onAction="#Button6Action" text="6" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="60.0" layoutY="150.0" prefHeight="40.0" prefWidth="463.0">
+         <buttons>
+            <Button fx:id="Button7" mnemonicParsing="false" onAction="#Button7Action" text="7" />
+            <Button fx:id="Button8" mnemonicParsing="false" onAction="#Button8Action" text="8" />
+            <Button fx:id="Button9" mnemonicParsing="false" onAction="#Button9Action" text="9" />
+            <Button fx:id="Button10" mnemonicParsing="false" onAction="#Button10Action" text="10" />
+            <Button fx:id="Button11" mnemonicParsing="false" onAction="#Button11" text="11" />
+            <Button fx:id="Button12" mnemonicParsing="false" onAction="#Button12Action" text="12" />
+         </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="60.0" layoutY="200.0" prefHeight="40.0" prefWidth="463.0">
+         <buttons>
+            <Button fx:id="Button13" mnemonicParsing="false" onAction="#Button13Action" text="13" />
+            <Button fx:id="Button14" mnemonicParsing="false" onAction="#Button14Action" text="14" />
+            <Button fx:id="Button15" mnemonicParsing="false" onAction="#Button15Action" text="15" />
+            <Button fx:id="Button16" mnemonicParsing="false" onAction="#Button16Action" text="16" />
+            <Button fx:id="Button17" mnemonicParsing="false" onAction="#Button17Action" text="17" />
+            <Button fx:id="Button18" mnemonicParsing="false" onAction="#Button18Action" text="18" />
+         </buttons>
+      </ButtonBar>
+      <SplitMenuButton layoutX="511.0" layoutY="37.0" mnemonicParsing="false" text="Floor">
+        <items>
+            <MenuItem fx:id="menuButton1" mnemonicParsing="false" onAction="#menuButton1Action" text="  1" />
+            <MenuItem fx:id="menuButton2" mnemonicParsing="false" onAction="#menuButton2Action" text="  2" />
+          <MenuItem fx:id="menuButton3" mnemonicParsing="false" onAction="#menuButton3Action" text="  3" />
+          <MenuItem fx:id="menuButton4" mnemonicParsing="false" onAction="#menuButton4Action" text="  4" />
+            <MenuItem fx:id="menuButton5" mnemonicParsing="false" onAction="#menuButton5Action" text="  5" />
+            <MenuItem fx:id="menuButton6" mnemonicParsing="false" onAction="#menuButton6Action" text="  6" />
+        </items>
+      </SplitMenuButton>
+      <Label fx:id="iconLabel" layoutX="33.0" layoutY="14.0" prefHeight="75.0" prefWidth="75.0" />
+      <ButtonBar layoutX="60.0" layoutY="250.0" prefHeight="40.0" prefWidth="463.0">
+         <buttons>
+            <Button fx:id="Button19" mnemonicParsing="false" onAction="#Button19Action" text="19" />
+            <Button fx:id="Button20" mnemonicParsing="false" onAction="#Button20Action" text="20" />
+            <Button fx:id="Button21" mnemonicParsing="false" onAction="#Button21Action" text="21" />
+            <Button fx:id="Button22" mnemonicParsing="false" onAction="#Button22Action" text="22" />
+            <Button fx:id="Button23" mnemonicParsing="false" onAction="#Button23Action" text="23" />
+            <Button fx:id="Button24" mnemonicParsing="false" onAction="#Button24Action" text="24" />
+         </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="60.0" layoutY="300.0" prefHeight="40.0" prefWidth="463.0">
+         <buttons>
+            <Button fx:id="Button25" mnemonicParsing="false" onAction="#Button25Action" text="25" />
+            <Button fx:id="Button26" mnemonicParsing="false" onAction="#Button26Action" text="26" />
+            <Button fx:id="Button27" mnemonicParsing="false" onAction="#Button27Action" text="27" />
+            <Button fx:id="Button28" mnemonicParsing="false" onAction="#Button28Action" text="28" />
+            <Button fx:id="Button29" mnemonicParsing="false" onAction="#Button29Action" text="29" />
+            <Button fx:id="Button30" mnemonicParsing="false" onAction="#Button30Action" text="30" />
+         </buttons>
+      </ButtonBar>
+      <Button fx:id="backButton" layoutX="26.0" layoutY="377.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+   </children>
+</AnchorPane>
